@@ -15,5 +15,8 @@ namespace TechBoostEFLINQ
 
         public BlogImage BlogImage { get; set; }
         public List<Post> Posts { get; set; }
+
+        [NotMapped]
+        public DateTime LoadedFromDatabase { get; set; }
     }
 }
