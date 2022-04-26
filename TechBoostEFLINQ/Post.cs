@@ -14,5 +14,7 @@ namespace TechBoostEFLINQ
         public Blog Blog { get; set; }
 
         public List<PostTag> PostTags { get; set; }
+
+        //public ICollection<Tag> Tags { get; set; }
     }
 }

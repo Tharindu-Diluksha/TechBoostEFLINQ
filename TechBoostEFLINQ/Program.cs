@@ -18,7 +18,7 @@ namespace TechBoostEFLINQ
                 var blog = context.Blogs
                     .First(b => b.BlogId == 1);
 
-                var test = context.PostTags.Single(pt => pt.PostId == -1);
+                //var test = context.PostTags.Single(pt => pt.PostId == -1);
 
 
                 var blogs = context.Blogs

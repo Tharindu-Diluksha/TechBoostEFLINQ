@@ -8,7 +8,7 @@ namespace TechBoostEFLINQ
     public class DataContext : DbContext
     {
         public DbSet<Post> Posts { get; set; }
-        
+
         public DbSet<Blog> Blogs { get; set; }
 
         public DbSet<BlogImage> BlogImages { get; set; }
@@ -26,6 +26,12 @@ namespace TechBoostEFLINQ
 
             modelBuilder.Entity<PostTag>()
             .HasKey(t => new { t.PostId, t.TagId });
+
+            //modelBuilder
+            //.Entity<Post>()
+            //.HasMany(p => p.Tags)
+            //.WithMany(p => p.Posts)
+            //.UsingEntity(j => j.ToTable("PostTags"));
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
