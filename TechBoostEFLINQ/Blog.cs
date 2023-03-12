@@ -6,11 +6,11 @@ using System.Text;
 
 namespace TechBoostEFLINQ
 {
-    //[Table("blogs")]
+    //[Table("blog")]
     public class Blog
     {
         public int BlogId { get; set; }
-        public string BlobUrl { get; set; }
+        public string Link { get; set; }
         public string BlobName { get; set; }
 
         public BlogImage BlogImage { get; set; }

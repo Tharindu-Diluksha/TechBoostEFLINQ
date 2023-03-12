@@ -8,7 +8,7 @@ namespace TechBoostEFLINQ
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Tech Boost - 2020");
+            Console.WriteLine("Tech Boost - 2023");
 
             using (var context = new DataContext())
             {
@@ -18,17 +18,17 @@ namespace TechBoostEFLINQ
                 var blog = context.Blogs
                     .First(b => b.BlogId == 1);
 
-                //var test = context.PostTags.Single(pt => pt.PostId == -1);
+                var test = context.PostTags.Single(pt => pt.PostId == -1);
 
 
                 var blogs = context.Blogs
-                    .Where(b => b.BlobUrl.Contains("dotnet"))
+                    .Where(b => b.Link.Contains("dotnet"))
                     .ToList();
 
 
 
                 var blogsQuery = from b in context.Blogs
-                             where b.BlobUrl.Contains("dotnet")
+                             where b.Link.Contains("dotnet")
                              select b;
 
                 var result = blogsQuery.ToList();
@@ -36,7 +36,7 @@ namespace TechBoostEFLINQ
                 var quer = (from b in context.Blogs
                            join p in context.Posts
                            on b.BlogId equals p.BlogId
-                           where b.BlobUrl.Contains("dotnet")
+                           where b.Link.Contains("dotnet")
                            select p).ToList();
 
 
